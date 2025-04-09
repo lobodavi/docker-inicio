@@ -31,10 +31,11 @@ if (mysqli_connect_errno()) {
 
 $valor_rand1 =  rand(1, 999);
 $valor_rand2 = strtoupper(substr(bin2hex(random_bytes(4)), 1));
+$valor_rand3 = rand()*(9999-1)+1;
 $host_name = gethostname();
 
 
-$query = "INSERT INTO dados (AlunoID, Nome, Sobrenome, Endereco, Cidade, Host) VALUES ('$valor_rand1' , '$valor_rand2', '$valor_rand2', '$valor_rand2', '$valor_rand2','$host_name')";
+$query = "INSERT INTO dados (ProdutoID, Nome, Valor, Quantidade, Host) VALUES ('$valor_rand1' , '$valor_rand2', '$valor_rand3', '$valor_rand1','$host_name')";
 
 
 if ($link->query($query) === TRUE) {
